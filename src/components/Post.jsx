@@ -1,3 +1,4 @@
+import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
@@ -7,7 +8,7 @@ export function Post() {
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <img className={styles.avatar} src="https://avatars.githubusercontent.com/u/111245491?v=4" />
+                    <Avatar src="https://avatars.githubusercontent.com/u/111245491?v=4" />
                     <div className={styles.authorInfo}>
                         <strong>Stephani Engel</strong>
                         <span>Front-End Developer</span>
@@ -23,8 +24,8 @@ export function Post() {
                 <p>👉{' '}<a href="https://github.com/StephaniEngell">github.com/StephaniEngell</a></p>
                 <p>
                     <a href="#">#novoprojeto</a>{' '}
-                    <a href="#">#nlw</a>{' '}
-                    <a href="#">#rocketseat</a>{' '}
+                    <a href="#">#dev</a>{' '}
+                    <a href="#">#frontend</a>{' '}
                 </p>
             </div>
 
