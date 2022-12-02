@@ -6,6 +6,39 @@ import styles from './App.module.css';
 
 import './global.css';
 
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: 'https://github.com/StephaniEngell.png',
+      name: 'Stephani Engel',
+      role: 'FrontEnd Developer'
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galeraa 👋', },
+      { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
+      { type: 'link', content: 'github.com/StephaniEngell' },
+    ],
+    publishedAt: new Date('2022-01-12 20:00:00'),
+  },
+
+  {
+    id: 2,
+    author: {
+      avatarUrl: 'https://github.com/RafaelYokoyama.png',
+      name: 'Rafael Yokoyama',
+      role: 'FrontEnd Developer'
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galeraa 👋', },
+      { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
+      { type: 'link', content: 'github.com/StephaniEngell' },
+    ],
+    publishedAt: new Date('2022-11-12 20:00:00'),
+  },
+
+];
+
 export function App() {
   return (
     <div>
@@ -15,14 +48,15 @@ export function App() {
         <Sidebar />
 
         <main>
-          <Post
-            author="Diego Fernandes"
-            content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio pariatur explicabo reiciendis asperiores accusamus vel vero ducimus, sunt beatae perspiciatis facilis dolores, ex, unde at commodi vitae? Ipsum, maiores minus."
-          />
-          <Post
-            author="Gabriel Buzzi"
-            content="Lorem ipsum dolor, sit amet consectet"
-          />
+          {posts.map(posts => {
+            return (
+              <Post
+                author={posts.author}
+                content={posts.content}
+                publishedAt={posts.publishedAt}
+              />
+            )
+          })}
         </main>
       </div>
     </div>
